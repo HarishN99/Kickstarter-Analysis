@@ -4,6 +4,9 @@
 
 ### Purpose
 
+Test text copy and paste.
+
+
 ## Analysis and Challenges
 
 ### Analysis of Outcomes Based on Launch Date
