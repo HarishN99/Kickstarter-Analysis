@@ -3,22 +3,42 @@
 ## Overview of Project
 
 ### Purpose
-
-- Explain the purpose of this analysis:
-
 This analysis was intended to help Louise begin and plan her crowdfunding campaign to help fund her play Fever by determining specific factors or trends that make a project’s campaign successful. Specifically, this analysis helps visualize campaign outcomes based on their launch dates and funding goals. This will provide Louise with information on how launch dates and funding goals may be influencing the success of crowdfunding campaigns so that she can set her own campaign accordingly. 
 
 
 ## Analysis and Challenges
 
-Explain how you performed your analysis using images and links to code, as well as any challenges you encountered and how you overcame them. 
-
-If you had no challenges, describe any possible challenges or difficulties that could be encountered.
-
-
 ### Analysis of Outcomes Based on Launch Date
 
+![Theater_Outcomes_vs_Launch](https://user-images.githubusercontent.com/94864663/147695684-be294e44-1339-4bd7-b53c-cdcfb16ac7be.png)
+Figure 1. Number of theater campaigns that were successful, failed, or canceled from each month across multiple years. 
+
+
+Below is the pivot table generated from the original Kickstarter dataset. The table shows the number of campaigns for each outcome based on the month they were launched with the option of filtering for parent category and years. In this case the table does not filter for a specific year but filters for theater campaigns.
+
+![Launch_Date_Pivot](https://user-images.githubusercontent.com/94864663/147699235-f50fa788-b1fc-4fa1-aef2-de931d0fc1b6.png)
+
+
+Below are the pivot table fields for reference:
+
+![Pivot_Fields](https://user-images.githubusercontent.com/94864663/147699289-09f3c683-fa3b-4a98-8642-9969e2966e65.png)
+
+
 ### Analysis of Outcomes Based on Goals
+
+![Outcome_vs_Goals](https://user-images.githubusercontent.com/94864663/147695691-0cb38b06-6b02-4deb-9e29-c1500b749dd6.png)
+Figure 2. Percentage of successful, failed, and canceled campaigns based on their fundraising goals.
+
+
+A COUNTIFS formula was used to count the number of plays based on each outcome and goal. Therefore, the formula needed to count the number of campaigns in each goal range by looking at column D and filter for plays in column R while also filtering for each specific outcome in column F from the original dataset. An example formula is provided below. This formula is counting the number of successful campaigns for plays with goals between $1000 and $4999.
+
+![Based_on_Goals_Formula](https://user-images.githubusercontent.com/94864663/147698896-a7724a1d-1a74-4246-94f7-a9bf21d29842.png)
+
+To calculate a percentage, the rows needed from each column outcome needed to be summed. Therefore, total outcomes equal the sum of successful, failed, and canceled projects in each row. The formula “= SUM (B2:D2)” was used to determine these totals. Then the percentages were found by dividing the number of projects for each outcome by their total for each row. For example, the number of successful campaigns for plays with goals less than $1000 was 141, and the total number of projects with goals less than $1000 was 186. Therefore 141/186 (75.1%) of campaigns for plays with goals less than $1000 were able to succeed. 
+
+Below is the table of values for reference:
+
+![Goals_Table](https://user-images.githubusercontent.com/94864663/147699026-a43994cc-c187-47cd-9ad9-6274ebc20e53.png)
 
 ### Challenges and Difficulties Encountered
 
